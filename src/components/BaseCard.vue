@@ -4,12 +4,6 @@ defineProps({
   titulo: String
 })
 
-const emit = defineEmits(['saludar'])
-
-function enviarSaludo() {
-  emit('saludar')
-}
-
 </script>
 
 <template>
@@ -19,14 +13,11 @@ function enviarSaludo() {
 
     <slot></slot>
 
-    <button @click="enviarSaludo">
-      Saludar
-    </button>
-
   </div>
 </template>
 
 <style scoped>
+
 .card {
   border: 1px solid #ccc;
   padding: 20px;
@@ -37,4 +28,14 @@ function enviarSaludo() {
 button {
   margin-top: 15px;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-top: 10px;
+}
+
 </style>

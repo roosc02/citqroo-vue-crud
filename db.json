@@ -1,14 +1,10 @@
 {
   "alumnos": [
     {
-      "id": 1,
-      "nombre": "Roode",
-      "carrera": "ISC"
-    },
-    {
-      "id": 2,
-      "nombre": "Juan",
-      "carrera": "ITICs"
+      "nombre": "roode",
+      "carrera": "ISIC",
+      "id": "bkEPJVWjB5U"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
