@@ -161,13 +161,30 @@ onMounted(() => {
 
 <style scoped>
 
+.page {
+  max-width: 700px;
+  margin: auto;
+}
+
+input {
+  padding: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
 ul {
   list-style: none;
   padding: 0;
 }
 
 li {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 </style>

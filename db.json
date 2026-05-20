@@ -1,9 +1,43 @@
 {
   "alumnos": [
     {
-      "nombre": "roode",
-      "carrera": "ISIC",
-      "id": "bkEPJVWjB5U"
+      "id": "1",
+      "nombre": "Roode",
+      "carrera": "ISC"
+    },
+    {
+      "id": "2",
+      "nombre": "Juan",
+      "carrera": "ITICs"
+    }
+  ],
+  "proyectos": [
+    {
+      "id": "1",
+      "nombre": "ROOMI",
+      "descripcion": "Robot autónomo"
+    },
+    {
+      "id": "2",
+      "nombre": "Sistema Escolar",
+      "descripcion": "Control escolar"
+    }
+  ],
+  "participaciones": [
+    {
+      "alumnoId": 1,
+      "proyectoId": 1,
+      "id": "gdpkaR0eS0M"
+    },
+    {
+      "alumnoId": 2,
+      "proyectoId": 2,
+      "id": "KwNsohmgnr4"
+    },
+    {
+      "alumnoId": 1,
+      "proyectoId": 1,
+      "id": "mCjifuYSsZo"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
