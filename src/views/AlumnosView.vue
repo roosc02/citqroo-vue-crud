@@ -1,3 +1,14 @@
+<script setup>
+import BaseCard from '../components/BaseCard.vue'
+</script>
+
 <template>
-  <h1>Alumnos</h1>
+  <div>
+    <h1>Alumnos</h1>
+
+    <BaseCard titulo="Lista de alumnos">
+      <p> Alumnos registrados</p>
+    </BaseCard>
+
+  </div>
 </template>
