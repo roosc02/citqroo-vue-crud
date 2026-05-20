@@ -1,7 +1,15 @@
 <script setup>
+
 defineProps({
   titulo: String
 })
+
+const emit = defineEmits(['saludar'])
+
+function enviarSaludo() {
+  emit('saludar')
+}
+
 </script>
 
 <template>
@@ -10,6 +18,10 @@ defineProps({
     <h2>{{ titulo }}</h2>
 
     <slot></slot>
+
+    <button @click="enviarSaludo">
+      Saludar
+    </button>
 
   </div>
 </template>
@@ -20,5 +32,9 @@ defineProps({
   padding: 20px;
   margin-top: 20px;
   border-radius: 10px;
+}
+
+button {
+  margin-top: 15px;
 }
 </style>
