@@ -9,6 +9,11 @@
       "id": "2",
       "nombre": "Juan",
       "carrera": "ITICs"
+    },
+    {
+      "id": "3",
+      "nombre": "Pepito",
+      "carrera": "IDAP"
     }
   ],
   "proyectos": [
@@ -21,23 +26,33 @@
       "id": "2",
       "nombre": "Sistema Escolar",
       "descripcion": "Control escolar"
+    },
+    {
+      "id": "3",
+      "nombre": "Riega y Crece",
+      "descripcion": "Sistema de Riego"
     }
   ],
   "participaciones": [
     {
+      "id": "1",
       "alumnoId": 1,
-      "proyectoId": 1,
-      "id": "gdpkaR0eS0M"
+      "proyectoId": 1
     },
     {
+      "id": "2",
       "alumnoId": 2,
-      "proyectoId": 2,
-      "id": "KwNsohmgnr4"
+      "proyectoId": 2
+    },
+    {
+      "alumnoId": 3,
+      "proyectoId": 3,
+      "id": "kBIalvew6vI"
     },
     {
       "alumnoId": 1,
-      "proyectoId": 1,
-      "id": "mCjifuYSsZo"
+      "proyectoId": 2,
+      "id": "Ut-n7-EtXxI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

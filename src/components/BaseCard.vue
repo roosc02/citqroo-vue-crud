@@ -7,35 +7,19 @@ defineProps({
 </script>
 
 <template>
-  <div class="card">
 
-    <h2>{{ titulo }}</h2>
+  <div class="card shadow border-0 mb-4 rounded-4">
 
-    <slot></slot>
+    <div class="card-body p-4">
+
+      <h3 class="card-title fw-bold mb-4">
+        {{ titulo }}
+      </h3>
+
+      <slot></slot>
+
+    </div>
 
   </div>
+
 </template>
-
-<style scoped>
-
-.card {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-}
-
-button {
-  margin-top: 15px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-top: 10px;
-}
-
-</style>

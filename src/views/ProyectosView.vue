@@ -113,41 +113,66 @@ onMounted(() => {
 
     <BaseCard titulo="Agregar proyecto">
 
-      <input
-        v-model="nombre"
-        type="text"
-        placeholder="Nombre"
-      />
+      <div class="d-flex flex-wrap gap-2">
 
-      <input
-        v-model="descripcion"
-        type="text"
-        placeholder="Descripción"
-      />
+        <input
+          v-model="nombre"
+          type="text"
+          placeholder="Nombre"
+          class="form-control"
+        />
 
-      <button @click="agregarProyecto">
+        <input
+          v-model="descripcion"
+          type="text"
+          placeholder="Descripción"
+          class="form-control"
+        />
 
-        {{ proyectoEditando ? 'Guardar cambios' : 'Agregar' }}
+        <button
+          @click="agregarProyecto"
+          class="btn btn-primary"
+        >
 
-      </button>
+          {{ proyectoEditando ? 'Guardar cambios' : 'Agregar' }}
+
+        </button>
+
+      </div>
 
     </BaseCard>
 
     <BaseCard titulo="Lista de proyectos">
 
-      <ul>
+      <ul class="list-group">
 
-        <li v-for="proyecto in proyectos" :key="proyecto.id">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+          v-for="proyecto in proyectos"
+          :key="proyecto.id"
+        >
 
-          {{ proyecto.nombre }} - {{ proyecto.descripcion }}
+          <span>
+            {{ proyecto.nombre }} - {{ proyecto.descripcion }}
+          </span>
 
-          <button @click="editarProyecto(proyecto)">
-            Editar
-          </button>
+          <div>
 
-          <button @click="eliminarProyecto(proyecto.id)">
-            Eliminar
-          </button>
+            <button
+              @click="editarProyecto(proyecto)"
+              class="btn btn-warning btn-sm me-2"
+            >
+              Editar
+            </button>
+
+            <button
+              @click="eliminarProyecto(proyecto.id)"
+              class="btn btn-danger btn-sm"
+            >
+              Eliminar
+            </button>
+
+          </div>
 
         </li>
 
@@ -158,33 +183,3 @@ onMounted(() => {
   </div>
 
 </template>
-
-<style scoped>
-
-.page {
-  max-width: 700px;
-  margin: auto;
-}
-
-input {
-  padding: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
-}
-
-button {
-  padding: 10px;
-  margin-left: 5px;
-  cursor: pointer;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-top: 15px;
-}
-
-</style>

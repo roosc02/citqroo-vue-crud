@@ -34,7 +34,7 @@ async function obtenerDatos() {
 
 async function agregarParticipacion() {
 
-  if (!alumnoId.value || !proyectoId.value) {
+  if (alumnoId.value === '' || proyectoId.value === '') {
 
     alert('Selecciona alumno y proyecto')
 
@@ -100,58 +100,76 @@ onMounted(() => {
 
     <BaseCard titulo="Agregar participación">
 
-      <select v-model="alumnoId">
+      <div class="d-flex flex-wrap gap-2">
 
-        <option disabled value="">
-          Selecciona un alumno
-        </option>
-
-        <option
-          v-for="alumno in alumnos"
-          :key="alumno.id"
-          :value="alumno.id"
+        <select
+          v-model="alumnoId"
+          class="form-select"
         >
-          {{ alumno.nombre }}
-        </option>
 
-      </select>
+          <option disabled value="">
+            Selecciona un alumno
+          </option>
 
-      <select v-model="proyectoId">
+          <option
+            v-for="alumno in alumnos"
+            :key="alumno.id"
+            :value="alumno.id"
+          >
+            {{ alumno.nombre }}
+          </option>
 
-        <option disabled value="">
+        </select>
+
+        <select
+          v-model="proyectoId"
+          class="form-select"
+        >
+
+          <option disabled value="">
             Selecciona un proyecto
-        </option>
+          </option>
 
-        <option
+          <option
             v-for="proyecto in proyectos"
             :key="proyecto.id"
             :value="proyecto.id"
-        >
+          >
             {{ proyecto.nombre }}
-        </option>
+          </option>
 
-     </select>
+        </select>
 
-      <button @click="agregarParticipacion">
-        Agregar
-      </button>
+        <button
+          @click="agregarParticipacion"
+          class="btn btn-primary"
+        >
+          Agregar
+        </button>
+
+      </div>
 
     </BaseCard>
 
     <BaseCard titulo="Lista de participaciones">
 
-      <ul>
+      <ul class="list-group">
 
         <li
+          class="list-group-item"
           v-for="participacion in participaciones"
           :key="participacion.id"
         >
 
-          {{ obtenerNombreAlumno(participacion.alumnoId) }}
+          <strong>
+            {{ obtenerNombreAlumno(participacion.alumnoId) }}
+          </strong>
 
           participa en
 
-          {{ obtenerNombreProyecto(participacion.proyectoId) }}
+          <strong>
+            {{ obtenerNombreProyecto(participacion.proyectoId) }}
+          </strong>
 
         </li>
 
