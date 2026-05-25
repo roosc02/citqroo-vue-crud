@@ -34,6 +34,7 @@ async function agregarAlumno() {
     alert('Completa los campos')
 
     return
+  
 
   }
 
@@ -102,6 +103,8 @@ onMounted(() => {
   obtenerAlumnos()
 
 })
+
+
 
 </script>
 
