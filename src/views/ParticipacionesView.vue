@@ -45,8 +45,8 @@ async function agregarParticipacion() {
   try {
 
     const nuevaParticipacion = {
-      alumnoId: Number(alumnoId.value),
-      proyectoId: Number(proyectoId.value)
+      alumnoId: (alumnoId.value),
+      proyectoId: (proyectoId.value)
     }
 
     await api.post('/participaciones', nuevaParticipacion)
@@ -66,21 +66,14 @@ async function agregarParticipacion() {
 
 function obtenerNombreAlumno(id) {
 
-  const alumno = alumnos.value.find(
-    a => Number(a.id) === Number(id)
-  )
-
-  return alumno ? alumno.nombre : 'Alumno'
-
+  const alumno = alumnos.value.find(a => String(a.id) === String(id))
+  return alumno ? alumno.nombre :'Alumno'
 }
 
 function obtenerNombreProyecto(id) {
 
-  const proyecto = proyectos.value.find(
-    p => Number(p.id) === Number(id)
-  )
-
-  return proyecto ? proyecto.nombre : 'Proyecto'
+  const proyecto = proyectos.value.find(p => String(p.id) === String(id))
+  return proyecto ? proyecto.nombre :'Proyecto'
 
 }
 
