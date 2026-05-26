@@ -1,11 +1,20 @@
 <script setup>
 
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import api from '../services/api'
 
 const totalAlumnos = ref(0)
 const totalProyectos = ref(0)
 const totalParticipaciones = ref(0)
+
+const totalRegistros = computed (() => {
+  
+  return(
+    totalAlumnos.value +
+    totalProyectos.value +
+    totalParticipaciones.value
+  )
+})
 
 async function obtenerDatos() {
 
@@ -86,7 +95,7 @@ onMounted(() => {
 
       </div>
 
-      <div class="col-md-4">
+      < class="col-md-4">
 
         <div class="card shadow border-0 rounded-4 text-center p-4">
 
@@ -99,6 +108,12 @@ onMounted(() => {
           </p>
 
         </div>
+
+      <div class="text-center mt-5">
+        <h4 class="fw-bold">
+          Total de registros: {{ totalRegistros }}
+        </h4>
+      </div>
 
       </div>
 
