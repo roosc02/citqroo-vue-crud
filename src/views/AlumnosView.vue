@@ -146,8 +146,18 @@ onMounted(() => {
     </BaseCard>
 
     <BaseCard titulo="Lista de alumnos">
-
-      <ul class="list-group">
+     <p
+      v-if="alumnos.length === 0"
+      class="text-muted"
+      >
+      No hay alumnos registrados
+    </p>
+    
+    
+      <ul 
+      v-else
+      class="list-group"
+      >
 
         <li
           class="list-group-item d-flex justify-content-between align-items-center"
