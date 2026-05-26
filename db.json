@@ -14,6 +14,11 @@
       "id": "3",
       "nombre": "Pepito",
       "carrera": "IDAP"
+    },
+    {
+      "nombre": "Dani",
+      "carrera": "Turismo",
+      "id": "RQLh-waNQOw"
     }
   ],
   "proyectos": [
@@ -31,6 +36,11 @@
       "id": "3",
       "nombre": "Riega y Crece",
       "descripcion": "Sistema de Riego"
+    },
+    {
+      "nombre": "buceo",
+      "descripcion": "Turismo",
+      "id": "uoAPosDEMjU"
     }
   ],
   "participaciones": [
@@ -53,6 +63,11 @@
       "alumnoId": 1,
       "proyectoId": 2,
       "id": "Ut-n7-EtXxI"
+    },
+    {
+      "alumnoId": null,
+      "proyectoId": null,
+      "id": "bTT1hxFiKkk"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

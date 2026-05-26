@@ -52,7 +52,7 @@ onMounted(() => {
     <div class="text-center mb-5">
 
       <h1 class="fw-bold">
-        Sistema CITQROO
+        CITQROO
       </h1>
 
       <p class="text-muted">
@@ -95,7 +95,7 @@ onMounted(() => {
 
       </div>
 
-      < class="col-md-4">
+      <div class="col-md-4">
 
         <div class="card shadow border-0 rounded-4 text-center p-4">
 
@@ -109,6 +109,10 @@ onMounted(() => {
 
         </div>
 
+      </div>
+
+    </div>
+
       <div class="text-center mt-5">
         <h4 class="fw-bold">
           Total de registros: {{ totalRegistros }}
@@ -116,9 +120,5 @@ onMounted(() => {
       </div>
 
       </div>
-
-    </div>
-
-  </div>
 
 </template>
