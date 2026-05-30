@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import api from '../services/api'
 import BaseCard from '../components/BaseCard.vue'
 
@@ -9,6 +9,25 @@ const participaciones = ref([])
 
 const alumnoId = ref('')
 const proyectoId = ref('')
+const busqueda = ref('')
+
+const participacionesFiltradas = computed(() => {
+  const texto = busqueda.value.toLowerCase().trim()
+
+  if (!texto) {
+    return participaciones.value
+  }
+
+  return participaciones.value.filter(participacion => {
+    const nombreAlumno = obtenerNombreAlumno(participacion.alumnoId).toLowerCase()
+    const nombreProyecto = obtenerNombreProyecto(participacion.proyectoId).toLowerCase()
+
+    return (
+      nombreAlumno.includes(texto) ||
+      nombreProyecto.includes(texto)
+    )
+  })
+})
 
 async function obtenerDatos() {
   try {
@@ -141,11 +160,30 @@ onMounted(() => {
       </div>
     </BaseCard>
 
+    <BaseCard titulo="Buscar participaciones">
+      <input
+        v-model="busqueda"
+        type="text"
+        placeholder="Buscar por alumno o proyecto"
+        class="form-control"
+      />
+    </BaseCard>
+
     <BaseCard titulo="Lista de participaciones">
-      <ul class="list-group">
+      <p
+        v-if="participacionesFiltradas.length === 0"
+        class="text-muted"
+      >
+        No hay participaciones registradas o no se encontraron coincidencias
+      </p>
+
+      <ul
+        v-else
+        class="list-group"
+      >
         <li
           class="list-group-item d-flex justify-content-between align-items-center"
-          v-for="participacion in participaciones"
+          v-for="participacion in participacionesFiltradas"
           :key="participacion.id"
         >
           <span>
